@@ -13,7 +13,7 @@ public class BotController : MonoBehaviour
 
     public float lookingAngle;
 
-    Vector2 lookDir;
+     public Vector2 lookDir;
 
     void FixedUpdate()
     {
