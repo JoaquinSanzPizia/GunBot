@@ -18,7 +18,7 @@ public class BotHandController : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-            Shoot();
+            ShootGun();
         }
     }
 
@@ -30,26 +30,53 @@ public class BotHandController : MonoBehaviour
         if (botController.lookDir == new Vector2(1, 0))
         {
             ActivateHand(false);
+            currentGun.GetComponent<Gun>().ChangeSprite(false);
         }
 
         else if (botController.lookDir == new Vector2(-1, 0))
         {
             ActivateHand(true);
+            currentGun.GetComponent<Gun>().ChangeSprite(false);
+        }
+
+        else if (botController.lookDir == new Vector2(0, -1) || botController.lookDir == new Vector2(0, 1))
+        {
+            currentGun.GetComponent<Gun>().ChangeSprite(true);
         }
     }
 
     void ChangeHandLayer()
     {
-        if (botController.lookDir == new Vector2(0, -1))
+        if (botController.lookDir == new Vector2(0, -1)) //DOWN
         {
-            hands[0].GetComponent<SpriteRenderer>().sortingOrder += 1;
-            hands[1].GetComponent<SpriteRenderer>().sortingOrder += 1;
+            hands[0].GetComponent<SpriteRenderer>().sortingOrder = 5;
+            hands[1].GetComponent<SpriteRenderer>().sortingOrder = 5;
+
+            currentGun.GetComponent<SpriteRenderer>().sortingOrder = 5;
         }
 
-        else if (botController.lookDir == new Vector2(0, 1))
+        else if (botController.lookDir == new Vector2(0, 1)) //UP
         {
-            hands[0].GetComponent<SpriteRenderer>().sortingOrder -= 1;
-            hands[1].GetComponent<SpriteRenderer>().sortingOrder -= 1;
+            hands[0].GetComponent<SpriteRenderer>().sortingOrder = 4;
+            hands[1].GetComponent<SpriteRenderer>().sortingOrder = 4;
+
+            currentGun.GetComponent<SpriteRenderer>().sortingOrder = 4;
+        }
+
+        else if (botController.lookDir == new Vector2(-1, 0)) //LEFT
+        {
+            hands[0].GetComponent<SpriteRenderer>().sortingOrder = 4;
+            hands[1].GetComponent<SpriteRenderer>().sortingOrder = 4;
+
+            currentGun.GetComponent<SpriteRenderer>().sortingOrder = 5;
+        }
+
+        else if (botController.lookDir == new Vector2(1, 0)) //RIGHT
+        {
+            hands[0].GetComponent<SpriteRenderer>().sortingOrder = 4;
+            hands[1].GetComponent<SpriteRenderer>().sortingOrder = 4;
+
+            currentGun.GetComponent<SpriteRenderer>().sortingOrder = 5;
         }
     }
 
@@ -82,8 +109,8 @@ public class BotHandController : MonoBehaviour
         hands[1].SetActive(false);
     }
 
-    void Shoot()
+    void ShootGun()
     {
-        currentGun.transform.GetChild(0).GetComponent<ParticleSystem>().Play();           
+        currentGun.GetComponent<Gun>().Shoot();        
     }
 }

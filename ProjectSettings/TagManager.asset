@@ -12,10 +12,10 @@ TagManager:
   - Water
   - UI
   - TopTilemap
-  - 
-  - 
-  - 
-  - 
+  - Bullet
+  - Environment
+  - Enemy
+  - Player
   - 
   - 
   - 
@@ -46,4 +46,7 @@ TagManager:
     locked: 0
   - name: Environment
     uniqueID: 172749901
+    locked: 0
+  - name: VFX
+    uniqueID: 1531124909
     locked: 0
