@@ -8,7 +8,6 @@ public class EnemySpawner : MonoBehaviour
     public int enemieAmount;
     void Start()
     {
-        SpawnEnemie();
     }
 
     void Update()
@@ -21,9 +20,6 @@ public class EnemySpawner : MonoBehaviour
 
     void SpawnEnemie()
     {
-        LeanTween.delayedCall(1f, () => 
-        {
-            pooler.SpawnFromPool("enemy", transform.position, transform.rotation);
-        });
+        pooler.SpawnFromPool("enemy", transform.position + new Vector3(Random.Range(-0.5f, 0.5f), Random.Range(-0.5f, 0.5f), 0f), transform.rotation);
     }
 }

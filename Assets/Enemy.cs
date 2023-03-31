@@ -10,17 +10,28 @@ public class Enemy : MonoBehaviour, IPoolableObject
     [SerializeField] CircleCollider2D col;
     [SerializeField] Light2D botLight;
     [SerializeField] ParticleSystem deathPS;
-    [SerializeField] Material botMat;
 
-    [SerializeField] int health;
+    [SerializeField] int currentHealth;
+    [SerializeField] int maxHealth;
     public float speed = 2f;
     public float followDistance = 10;
 
     private Vector3 originalPos;
     private Transform player;
     private Vector3 target;
+    private Material matInstance;
 
     bool alive;
+
+    void Start()
+    {
+        matInstance = new Material(model.sharedMaterial);
+    }
+
+    void OnDestroy()
+    {
+        Destroy(matInstance);
+    }
 
     private void Update()
     {
@@ -31,6 +42,7 @@ public class Enemy : MonoBehaviour, IPoolableObject
     {
         player = FindObjectOfType<BotController>().transform;
 
+        currentHealth = maxHealth;
         originalPos = transform.position;
         alive = true;
         model.enabled = true;
@@ -71,11 +83,32 @@ public class Enemy : MonoBehaviour, IPoolableObject
     {
         if (other.gameObject.tag == "Bullet")
         {
-            //gameObject.GetComponentInChildren<SpriteRenderer>().sharedMaterial.SetColor("_TintAlpha", Color.white);
-            health--;
+            LeanTween.cancel(gameObject);
+            LeanTween.scale(gameObject, Vector3.one, 0f);
+
+            //Material mat = model.sharedMaterial;
+
+
+            matInstance.SetColor("_InsideTint", Color.white);
+            model.sharedMaterial = matInstance;
+
+            //MaterialPropertyBlock block = new MaterialPropertyBlock();
+            //block.SetColor("_InsideTint", Color.white);
+            //model.SetPropertyBlock(block);
+
+            LeanTween.delayedCall(0.1f, () =>
+            {
+                //block.SetColor("_InsideTint", Color.clear);
+                //model.SetPropertyBlock(block);
+
+                matInstance.SetColor("_InsideTint", Color.clear);
+                model.sharedMaterial = matInstance;
+            });
+
+            currentHealth--;
             LeanTween.scale(gameObject, gameObject.transform.localScale * 1.1f, 0.1f).setLoopPingPong(1);
 
-            if (health <= 0)
+            if (currentHealth <= 0)
             {
                 Die();
             }

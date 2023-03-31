@@ -52,7 +52,8 @@ MonoBehaviour:
   col: {fileID: 6916443676677701709}
   botLight: {fileID: 6916443678197796760}
   deathPS: {fileID: 6916443676868000136}
-  health: 5
+  currentHealth: 0
+  maxHealth: 5
   speed: 0.35
   followDistance: 1.5
 --- !u!58 &6916443676677701709
@@ -394,6 +395,10 @@ PrefabInstance:
     - target: {fileID: 19886030, guid: 34c006058d7d594449f3fb5c03a6d852, type: 3}
       propertyPath: simulationSpeed
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 19886030, guid: 34c006058d7d594449f3fb5c03a6d852, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 1.5
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8239136, guid: 34c006058d7d594449f3fb5c03a6d852, type: 3}
