@@ -10,20 +10,13 @@ public class Gun : MonoBehaviour
     [SerializeField] ObjectPooler pooler;
     [SerializeField] float range;
     [SerializeField] float bulletSpeed;
-
-    void Start()
-    {
-        //pooler = gameObject.GetComponent<ObjectPooler>();
-    }
+    public float attackSpeed;
 
     public void Shoot()
     {
         shootMuzzle.Play();
         GameObject bullet = pooler.SpawnFromPool("Bullet01", shootPoint.transform.position, shootPoint.transform.rotation);
         Bullet bulletCs = bullet.GetComponent<Bullet>();
-
-        bullet.transform.GetChild(0).gameObject.GetComponent<ParticleSystem>().Play();
-        bullet.transform.SetParent(null);
 
         bulletCs.tweenID = LeanTween.move(bullet, shootPoint.transform.position + (-shootPoint.transform.right * range), 1f / bulletSpeed).setOnComplete(() => 
         {

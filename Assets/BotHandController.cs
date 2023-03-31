@@ -11,14 +11,26 @@ public class BotHandController : MonoBehaviour
 
     [SerializeField] GameObject currentGun;
 
+    bool shooting;
+    bool canShoot;
+
+    private void Start()
+    {
+        canShoot = true;
+    }
     void Update()
     {
         RotateHand();
         ChangeHandLayer();
+        ShootGun();
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButton(0))
         {
-            ShootGun();
+            shooting = true;
+        }
+        else if (Input.GetMouseButtonUp(0))
+        {
+            shooting = false;
         }
     }
 
@@ -111,6 +123,19 @@ public class BotHandController : MonoBehaviour
 
     void ShootGun()
     {
-        currentGun.GetComponent<Gun>().Shoot();        
+        if (shooting)
+        {
+            if (canShoot)
+            {
+                currentGun.GetComponent<Gun>().Shoot();
+
+                canShoot = false;
+
+                LeanTween.delayedCall(1f / currentGun.GetComponent<Gun>().attackSpeed, () =>
+                {
+                    canShoot = true;
+                });
+            }           
+        }        
     }
 }

@@ -6,6 +6,7 @@ using UnityEngine.Rendering.Universal;
 public class Bullet : MonoBehaviour, IPoolableObject
 {
     [SerializeField] ParticleSystem hitPS;
+    [SerializeField] ParticleSystem trailPS;
     public Transform originalParent;
     public GameObject visual;
     public int tweenID;
@@ -22,6 +23,9 @@ public class Bullet : MonoBehaviour, IPoolableObject
         visual.SetActive(true);
         col.enabled = true;
         bulletLight.enabled = true;
+
+        trailPS.Play();
+        transform.SetParent(null);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -34,7 +38,6 @@ public class Bullet : MonoBehaviour, IPoolableObject
         LeanTween.cancel(tweenID);
 
         col.enabled = false;
-        bulletLight.enabled = false;
         visual.SetActive(false);
 
         hitPS.gameObject.transform.SetParent(null);
@@ -46,6 +49,7 @@ public class Bullet : MonoBehaviour, IPoolableObject
 
         LeanTween.delayedCall(0.2f, () =>
         {
+            bulletLight.enabled = false;
             hitPS.gameObject.transform.SetParent(gameObject.transform);
             LeanTween.moveLocal(hitPS.gameObject, Vector3.zero, 0f);
         });
