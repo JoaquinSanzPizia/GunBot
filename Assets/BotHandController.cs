@@ -16,6 +16,7 @@ public class BotHandController : MonoBehaviour
 
     private void Start()
     {
+        currentGun = gunHolders[0].transform.GetChild(0).gameObject;
         canShoot = true;
     }
     void Update()

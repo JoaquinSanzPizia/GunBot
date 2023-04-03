@@ -37,6 +37,8 @@ public class Bullet : MonoBehaviour, IPoolableObject
     {
         LeanTween.cancel(tweenID);
 
+        bulletLight.enabled = false;
+
         col.enabled = false;
         visual.SetActive(false);
 
@@ -49,7 +51,6 @@ public class Bullet : MonoBehaviour, IPoolableObject
 
         LeanTween.delayedCall(0.2f, () =>
         {
-            bulletLight.enabled = false;
             hitPS.gameObject.transform.SetParent(gameObject.transform);
             LeanTween.moveLocal(hitPS.gameObject, Vector3.zero, 0f);
         });

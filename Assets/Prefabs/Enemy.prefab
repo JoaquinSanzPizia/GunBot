@@ -10,7 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 6916443676677701711}
   - component: {fileID: 6916443676677701710}
+  - component: {fileID: 3168104862355260124}
   - component: {fileID: 6916443676677701709}
+  - component: {fileID: 5649900573151827128}
+  - component: {fileID: 3507737641584862740}
   m_Layer: 9
   m_Name: Enemy
   m_TagString: Untagged
@@ -54,8 +57,26 @@ MonoBehaviour:
   deathPS: {fileID: 6916443676868000136}
   currentHealth: 0
   maxHealth: 5
-  speed: 0.35
+  speed: 0
   followDistance: 1.5
+  enemyAI: {fileID: 0}
+--- !u!114 &3168104862355260124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6916443676677701744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 041a9ea55b62426469355ce697baf4ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  speed: 5
+  detectRange: 2
+  destinationRange: 0.2
+  nextWaypointDistance: 1
 --- !u!58 &6916443676677701709
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -72,6 +93,55 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0.04}
   serializedVersion: 2
   m_Radius: 0.1
+--- !u!50 &5649900573151827128
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6916443676677701744}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 1
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
+--- !u!114 &3507737641584862740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6916443676677701744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 373b52eb9bf8c40f785bb6947a1aee66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1
+  drawGizmos: 1
+  detailedGizmos: 0
+  startEndModifier:
+    addPoints: 0
+    exactStartPoint: 3
+    exactEndPoint: 3
+    useRaycasting: 0
+    mask:
+      serializedVersion: 2
+      m_Bits: 4294967295
+    useGraphRaycasting: 0
+  traversableTags: -1
+  tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  graphMask:
+    value: -1
 --- !u!1 &6916443677503696967
 GameObject:
   m_ObjectHideFlags: 0
