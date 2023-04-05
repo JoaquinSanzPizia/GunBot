@@ -50,30 +50,24 @@ public class BotController : MonoBehaviour
 
         lookingAngle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg;
 
-        Debug.Log(lookingAngle);
-
         if (lookingAngle > 45f && lookingAngle < 135)
         {
             lookDir = new Vector2(0, 1);
-            Debug.Log("Up");
         }
 
         if (lookingAngle > 135f && lookingAngle < 180f || lookingAngle > -180f && lookingAngle < -135f)
         {
             lookDir = new Vector2(-1, 0);
-            Debug.Log("Left");
         }
 
         if (lookingAngle > -135f && lookingAngle < -45f)
         {
             lookDir = new Vector2(0, -1);
-            Debug.Log("Down");
         }
 
         if (lookingAngle > 0f && lookingAngle < 45f || lookingAngle > -45f && lookingAngle < 0f)
         {
             lookDir = new Vector2(1, 0);
-            Debug.Log("Right");
         }
 
         botAnim.SetFloat("mouseX", lookDir.x);

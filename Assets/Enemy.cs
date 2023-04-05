@@ -9,17 +9,12 @@ public class Enemy : MonoBehaviour, IPoolableObject
     [SerializeField] Animator anim;
     [SerializeField] SpriteRenderer model;
     [SerializeField] CircleCollider2D col;
-    [SerializeField] Light2D botLight;
     [SerializeField] ParticleSystem deathPS;
 
     [SerializeField] int currentHealth;
     [SerializeField] int maxHealth;
-    public float speed = 2f;
-    public float followDistance = 10;
 
     private Transform originalPos;
-    private Transform player;
-    private Vector3 target;
     private Material matInstance;
 
     [SerializeField] EnemyAI enemyAI;
@@ -38,14 +33,14 @@ public class Enemy : MonoBehaviour, IPoolableObject
 
     public void OnObjectSpawn()
     {
-        player = FindObjectOfType<BotController>().transform;
+        enemyAI.enabled = true;
 
         currentHealth = maxHealth;
-        originalPos.position = transform.position;
+        originalPos = transform;
         alive = true;
         model.enabled = true;
-        botLight.enabled = true;
         col.enabled = true;
+        anim.enabled = true;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -81,15 +76,16 @@ public class Enemy : MonoBehaviour, IPoolableObject
 
     void Die()
     {
+        enemyAI.enabled = false;
         alive = false;
         deathPS.Play();
         model.enabled = false;
-        botLight.enabled = false;
         col.enabled = false;
+        anim.enabled = false;
 
         LeanTween.delayedCall(0.5f, () => 
         {
-            transform.position = originalPos.position;
+            LeanTween.move(gameObject, Vector2.zero, 0f);
         });
     }
 }
