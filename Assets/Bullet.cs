@@ -12,7 +12,6 @@ public class Bullet : MonoBehaviour, IPoolableObject
     public int tweenID;
 
     [SerializeField] CircleCollider2D col;
-    [SerializeField] Light2D bulletLight;
 
     private void OnEnable()
     {
@@ -22,7 +21,6 @@ public class Bullet : MonoBehaviour, IPoolableObject
     {
         visual.SetActive(true);
         col.enabled = true;
-        bulletLight.enabled = true;
 
         trailPS.Play();
         transform.SetParent(null);
@@ -36,8 +34,6 @@ public class Bullet : MonoBehaviour, IPoolableObject
     public void DisableBullet()
     {
         LeanTween.cancel(tweenID);
-
-        bulletLight.enabled = false;
 
         col.enabled = false;
         visual.SetActive(false);
