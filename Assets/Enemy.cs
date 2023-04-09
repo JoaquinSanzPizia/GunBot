@@ -3,9 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 using Pathfinding;
+using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour, IPoolableObject
 {
+    [SerializeField] enum EnemyType { melee, ranged};
+    [SerializeField] EnemyType enemyType;
     [SerializeField] Animator anim;
     [SerializeField] SpriteRenderer model;
     [SerializeField] CircleCollider2D col;
@@ -14,12 +17,13 @@ public class Enemy : MonoBehaviour, IPoolableObject
     [SerializeField] int currentHealth;
     [SerializeField] int maxHealth;
 
+    [SerializeField] GameObject healthBarFill, healthBar;
+
     private Transform originalPos;
     private Material matInstance;
 
     [SerializeField] EnemyAI enemyAI;
-
-    bool alive;
+    [SerializeField] EnemyShooter enemyShooter;
 
     void Start()
     {
@@ -33,11 +37,18 @@ public class Enemy : MonoBehaviour, IPoolableObject
 
     public void OnObjectSpawn()
     {
+        if (enemyType == EnemyType.ranged)
+        {
+            enemyShooter.enabled = false;
+            enemyShooter.player = FindObjectOfType<BotController>().gameObject;
+        }
         enemyAI.enabled = true;
-
+        
         currentHealth = maxHealth;
+        healthBarFill.GetComponent<Image>().fillAmount = 1;
+
+        healthBar.SetActive(true);
         originalPos = transform;
-        alive = true;
         model.enabled = true;
         col.enabled = true;
         anim.enabled = true;
@@ -48,6 +59,14 @@ public class Enemy : MonoBehaviour, IPoolableObject
         if (other.gameObject.tag == "Bullet")
         {
             GetHit();
+        }
+    }
+
+    public void Shoot()
+    {
+        if (enemyType == EnemyType.ranged)
+        {
+            enemyShooter.Shoot();
         }
     }
 
@@ -66,6 +85,7 @@ public class Enemy : MonoBehaviour, IPoolableObject
         });
 
         currentHealth--;
+        healthBarFill.GetComponent<Image>().fillAmount = (1f / maxHealth) * currentHealth;
         LeanTween.scale(gameObject, gameObject.transform.localScale * 1.1f, 0.1f).setLoopPingPong(1);
 
         if (currentHealth <= 0)
@@ -76,8 +96,13 @@ public class Enemy : MonoBehaviour, IPoolableObject
 
     void Die()
     {
+        if (enemyType == EnemyType.ranged)
+        {
+            enemyShooter.player = null;
+            enemyShooter.enabled = false;
+        }
+        healthBar.SetActive(false);
         enemyAI.enabled = false;
-        alive = false;
         deathPS.Play();
         model.enabled = false;
         col.enabled = false;

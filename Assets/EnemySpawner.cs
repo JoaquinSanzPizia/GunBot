@@ -20,6 +20,17 @@ public class EnemySpawner : MonoBehaviour
 
     void SpawnEnemie()
     {
-        pooler.SpawnFromPool("enemy", transform.position + new Vector3(Random.Range(-0.5f, 0.5f), Random.Range(-0.5f, 0.5f), 0f), transform.rotation);
+        int randomEnemy = Random.Range(0, 2);
+
+        switch (randomEnemy)
+        {
+            case 0:
+                pooler.SpawnFromPool("enemy01", transform.position + new Vector3(Random.Range(-0.5f, 0.5f), Random.Range(-0.5f, 0.5f), 0f), transform.rotation);
+                break;
+
+            case 1:
+                pooler.SpawnFromPool("enemy02", transform.position + new Vector3(Random.Range(-0.5f, 0.5f), Random.Range(-0.5f, 0.5f), 0f), transform.rotation);
+                break;
+        }
     }
 }

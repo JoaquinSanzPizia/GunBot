@@ -1,12 +1,12 @@
 fileFormatVersion: 2
-guid: ab72a647cba92bf48bd3da29d31cd9fe
+guid: 89175dad81c9bfa448b755ab623b6f0f
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -36,22 +36,22 @@ TextureImporter:
     filterMode: 0
     aniso: 1
     mipBias: 0
-    wrapU: 0
-    wrapV: 0
+    wrapU: 1
+    wrapV: 1
     wrapW: 0
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 0
+  spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
-  alphaIsTransparency: 0
+  alphaIsTransparency: 1
   spriteTessellationDetail: -1
   textureType: 8
   textureShape: 1
@@ -67,7 +67,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 512
+    maxTextureSize: 256
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -101,269 +101,278 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Android
-    maxTextureSize: 512
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Bot01 SpriteSheet_0
+      name: ComponentsHolder_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 64
-        width: 32
-        height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.3}
+        x: 1
+        y: 204
+        width: 71
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2feb4bbad5abf8540b70953df46b961a
-      internalID: -2141955952
+      spriteID: ed761547e2e6e9c4da23a0643a8e1e91
+      internalID: -908532862
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bot01 SpriteSheet_1
+      name: ComponentsHolder_1
       rect:
         serializedVersion: 2
-        x: 32
-        y: 64
-        width: 32
-        height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.3}
+        x: 75
+        y: 211
+        width: 89
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 23592b343d9e67a439868e52d9d1a5b5
-      internalID: 61381635
+      spriteID: e9783b01789562b4e8ed211c543e894f
+      internalID: 291090786
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bot01 SpriteSheet_2
+      name: ComponentsHolder_2
       rect:
         serializedVersion: 2
-        x: 64
-        y: 64
-        width: 32
-        height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.3}
+        x: 168
+        y: 236
+        width: 66
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ebc4ed55ad57e9344813ab12542d033b
-      internalID: -905921939
+      spriteID: 007222d443c1dce499cf94ca902659fd
+      internalID: -431486064
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bot01 SpriteSheet_3
+      name: ComponentsHolder_3
       rect:
         serializedVersion: 2
-        x: 96
-        y: 64
-        width: 32
-        height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.3}
+        x: 168
+        y: 225
+        width: 66
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f31df75fa97c2084ba50a543f3b6b212
-      internalID: 2023679513
+      spriteID: e73e2254c0e6a7841a6926b95cb6c4af
+      internalID: 1635495842
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bot01 SpriteSheet_4
+      name: ComponentsHolder_4
       rect:
         serializedVersion: 2
-        x: 0
-        y: 32
-        width: 32
-        height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.3}
+        x: 168
+        y: 214
+        width: 66
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dd83df414f565ee4982501f4feb2c673
-      internalID: 1258484879
+      spriteID: 29c57fadebb286844a966554cc427dd6
+      internalID: -393482196
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bot01 SpriteSheet_5
+      name: ComponentsHolder_5
       rect:
         serializedVersion: 2
-        x: 32
-        y: 32
-        width: 32
-        height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.3}
+        x: 1
+        y: 132
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c2723b125d20da245b331fa2fbf1dffa
-      internalID: 1997653983
+      spriteID: d125fe171545f5e42bb89b9afdd911de
+      internalID: -1125451987
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bot01 SpriteSheet_6
+      name: ComponentsHolder_6
       rect:
         serializedVersion: 2
-        x: 64
-        y: 32
-        width: 32
-        height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.3}
-      border: {x: 0, y: 0, z: 0, w: 0}
+        x: 77
+        y: 181
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 6, y: 6, z: 6, w: 6}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8485e1cf0371b8043ac1f9771c1c47ea
-      internalID: -1965767394
+      spriteID: 287b5ea34fe43644d99bd793dd4767ad
+      internalID: -891377966
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bot01 SpriteSheet_7
+      name: ComponentsHolder_7
       rect:
         serializedVersion: 2
-        x: 96
-        y: 32
-        width: 32
-        height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.3}
+        x: 99
+        y: 181
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c44cb5fc6a740c848a046a3e047bc2a9
-      internalID: 384176786
+      spriteID: 7cf00ce6be83d9d40bfde94e6a54587f
+      internalID: 191489702
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bot01 SpriteSheet_8
+      name: ComponentsHolder_8
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 32
-        height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.3}
+        x: 123
+        y: 195
+        width: 14
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4f67b31011ca5114fb2db6870c726a49
-      internalID: 619989430
+      spriteID: 2cfcc4720cc6d0c4aba7045f628d2b2d
+      internalID: 1744503022
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bot01 SpriteSheet_9
+      name: ComponentsHolder_9
       rect:
         serializedVersion: 2
-        x: 32
-        y: 0
-        width: 32
-        height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.3}
+        x: 139
+        y: 195
+        width: 14
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2a95c71fe2f7e504693e302a22d9f9fd
-      internalID: 1782841928
+      spriteID: 2d95ff5eefb106644ad0e57e8e4e0c48
+      internalID: 1190109576
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bot01 SpriteSheet_10
+      name: ComponentsHolder_10
       rect:
         serializedVersion: 2
-        x: 64
-        y: 0
-        width: 32
-        height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.3}
+        x: 125
+        y: 191
+        width: 10
+        height: 2
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ab5e45e8210565042a0a6cdb23a4bb78
-      internalID: -1707652760
+      spriteID: a3a48aaac49144548b7c32762930cc95
+      internalID: -1642493420
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bot01 SpriteSheet_11
+      name: ComponentsHolder_11
       rect:
         serializedVersion: 2
-        x: 96
-        y: 0
-        width: 32
-        height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.3}
+        x: 125
+        y: 187
+        width: 10
+        height: 2
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 019752f327406a54b9e42dda674cdc3c
-      internalID: 1597508571
+      spriteID: 6371ebda119c0c74b8d680d0f062a485
+      internalID: 527930567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ComponentsHolder_12
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 183
+        width: 10
+        height: 2
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbd88347143a4024c9f0447216423b7c
+      internalID: 1054163957
       vertices: []
       indices: 
       edges: []
@@ -371,7 +380,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: a1c4497ae3a8bc74eaa8efc9452b5b33
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -379,18 +388,19 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Bot01 SpriteSheet_0: -2141955952
-      Bot01 SpriteSheet_1: 61381635
-      Bot01 SpriteSheet_10: -1707652760
-      Bot01 SpriteSheet_11: 1597508571
-      Bot01 SpriteSheet_2: -905921939
-      Bot01 SpriteSheet_3: 2023679513
-      Bot01 SpriteSheet_4: 1258484879
-      Bot01 SpriteSheet_5: 1997653983
-      Bot01 SpriteSheet_6: -1965767394
-      Bot01 SpriteSheet_7: 384176786
-      Bot01 SpriteSheet_8: 619989430
-      Bot01 SpriteSheet_9: 1782841928
+      ComponentsHolder_0: -908532862
+      ComponentsHolder_1: 291090786
+      ComponentsHolder_10: -1242886508
+      ComponentsHolder_11: -1642493420
+      ComponentsHolder_12: 336671178
+      ComponentsHolder_2: -431486064
+      ComponentsHolder_3: 1635495842
+      ComponentsHolder_4: -393482196
+      ComponentsHolder_5: -1125451987
+      ComponentsHolder_6: -891377966
+      ComponentsHolder_7: 191489702
+      ComponentsHolder_8: 1744503022
+      ComponentsHolder_9: 1190109576
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

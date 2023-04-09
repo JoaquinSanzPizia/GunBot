@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: -1737969967, guid: ee0a5f245828b8f4383e1f5d6aea90e8, type: 3}
+  m_Sprite: {fileID: -441614749, guid: ee0a5f245828b8f4383e1f5d6aea90e8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -105,15 +105,19 @@ MonoBehaviour:
   m_SelfShadows: 0
   m_ApplyToSortingLayers: 0000000037e0f1684df44b0a
   m_ShapePath:
-  - {x: -0.13016987, y: -0.092958815, z: 0}
-  - {x: -0.07165301, y: -0.04244895, z: 0}
-  - {x: -0.072136045, y: 0.06272962, z: 0}
-  - {x: 0.041048408, y: 0.06478184, z: 0}
-  - {x: 0.058754086, y: -0.032999154, z: 0}
-  - {x: 0.11640465, y: -0.09384763, z: 0}
-  m_ShapePathHash: 1625296945
+  - {x: -0.038258433, y: -0.054679304, z: 0}
+  - {x: -0.03686869, y: 0.030931126, z: 0}
+  - {x: -0.0063654184, y: 0.057722203, z: 0}
+  - {x: 0.057798386, y: 0.058403857, z: 0}
+  - {x: 0.05747199, y: 0.021971464, z: 0}
+  - {x: 0.04052508, y: 0.0072565563, z: 0}
+  - {x: 0.039093018, y: -0.054527007, z: 0}
+  m_ShapePathHash: 1873070023
   m_Mesh: {fileID: 0}
-  m_InstanceId: 32818
+  m_InstanceId: 74260
+  m_LocalBounds:
+    m_Center: {x: 0.009769976, y: 0.0018622763, z: 0}
+    m_Extent: {x: 0.04802841, y: 0.05654158, z: 0}
 --- !u!1 &2257647560558049237
 GameObject:
   m_ObjectHideFlags: 0
@@ -188,7 +192,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: 651054562, guid: ee0a5f245828b8f4383e1f5d6aea90e8, type: 3}
+  m_Sprite: {fileID: 876911140, guid: ee0a5f245828b8f4383e1f5d6aea90e8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -219,13 +223,16 @@ MonoBehaviour:
   m_SelfShadows: 0
   m_ApplyToSortingLayers: 0000000037e0f1684df44b0a
   m_ShapePath:
-  - {x: -0.1809603, y: -0.09304758, z: 0}
-  - {x: -0.08536577, y: 0.06587955, z: 0}
-  - {x: 0.009380102, y: 0.06628139, z: 0}
-  - {x: 0.036678553, y: -0.093608044, z: 0}
-  m_ShapePathHash: 737841053
+  - {x: -0.059916377, y: -0.06327634, z: 0}
+  - {x: -0.059731126, y: 0.031481963, z: 0}
+  - {x: 0.059436798, y: 0.10425541, z: 0}
+  - {x: 0.06025219, y: -0.06356483, z: 0}
+  m_ShapePathHash: 890141169
   m_Mesh: {fileID: 0}
-  m_InstanceId: 32816
+  m_InstanceId: 74258
+  m_LocalBounds:
+    m_Center: {x: 0.00016790628, y: 0.020345293, z: 0}
+    m_Extent: {x: 0.060084283, y: 0.08391012, z: 0}
 --- !u!1 &2257647561928202023
 GameObject:
   m_ObjectHideFlags: 0
@@ -274,7 +281,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.060000002, y: -0.038874}
+  m_Offset: {x: 0, y: -0.025}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.15}
@@ -285,7 +292,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.22, y: 0.061899006}
+  m_Size: {x: 0.15, y: 0.061899006}
   m_EdgeRadius: 0
 --- !u!1 &2257647561931502108
 GameObject:
@@ -361,7 +368,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: -1951108395, guid: ee0a5f245828b8f4383e1f5d6aea90e8, type: 3}
+  m_Sprite: {fileID: 1773617280, guid: ee0a5f245828b8f4383e1f5d6aea90e8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -392,12 +399,14 @@ MonoBehaviour:
   m_SelfShadows: 0
   m_ApplyToSortingLayers: 0000000037e0f1684df44b0a
   m_ShapePath:
-  - {x: -0.16371965, y: -0.09343799, z: 0}
-  - {x: -0.105783105, y: 0.0676187, z: 0}
-  - {x: 0.020116687, y: 0.06565142, z: 0}
-  - {x: 0.010245204, y: 0.04133924, z: 0}
-  - {x: 0.008985162, y: -0.043708924, z: 0}
-  - {x: 0.042978406, y: -0.094238035, z: 0}
-  m_ShapePathHash: -2049383359
+  - {x: -0.046954393, y: -0.051291935, z: 0}
+  - {x: -0.04636407, y: 0.10216463, z: 0}
+  - {x: -0.008211017, y: 0.10157919, z: 0}
+  - {x: 0.06551874, y: 0.030975457, z: 0}
+  - {x: 0.06716061, y: -0.05347382, z: 0}
+  m_ShapePathHash: -1806945177
   m_Mesh: {fileID: 0}
-  m_InstanceId: 32820
+  m_InstanceId: 74262
+  m_LocalBounds:
+    m_Center: {x: 0.0101031065, y: 0.02434541, z: 0}
+    m_Extent: {x: 0.0570575, y: 0.07781923, z: 0}

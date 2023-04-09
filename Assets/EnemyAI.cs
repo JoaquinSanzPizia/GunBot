@@ -10,9 +10,11 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] Path path;
     [SerializeField] Animator anim;
 
+    [SerializeField] float pathDirectionFactor;
+    [SerializeField] float moveDelay;
+
     Vector2 spawnPos;
     int currentWaypoint;
-    bool reachedEnd;
 
     Seeker seeker;
     Rigidbody2D rb;
@@ -24,13 +26,12 @@ public class EnemyAI : MonoBehaviour
         player = FindObjectOfType<BotController>().transform;
 
         spawnPos = transform.position;
-        reachedEnd = false;
         currentWaypoint = 0;
 
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
 
-        InvokeRepeating("UpdatePath", 0f, 0.5f);
+        InvokeRepeating("UpdatePath", 0f, moveDelay);
     }
 
     void FixedUpdate()
@@ -67,15 +68,10 @@ public class EnemyAI : MonoBehaviour
 
         if (currentWaypoint >= path.vectorPath.Count)
         {
-            reachedEnd = true;
             return;
         }
-        else
-        {
-            reachedEnd = false;
-        }
 
-        Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;
+        Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized * pathDirectionFactor;
 
         Vector2 force = direction * speed * Time.deltaTime * 50f;
 
@@ -96,6 +92,11 @@ public class EnemyAI : MonoBehaviour
             {
                 seeker.StartPath(rb.position, player.position, OnPathComplete);
             }
+
+            LeanTween.delayedCall(0.5f, () => 
+            {
+                gameObject.GetComponent<Enemy>().Shoot();
+            });
         }
         else
         {
