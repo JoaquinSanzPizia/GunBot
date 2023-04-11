@@ -13,7 +13,7 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] float pathDirectionFactor;
     [SerializeField] float moveDelay;
 
-    Vector2 spawnPos;
+    public Vector2 spawnPos;
     int currentWaypoint;
 
     Seeker seeker;
@@ -25,7 +25,6 @@ public class EnemyAI : MonoBehaviour
     {
         player = FindObjectOfType<BotController>().transform;
 
-        spawnPos = transform.position;
         currentWaypoint = 0;
 
         seeker = GetComponent<Seeker>();
@@ -73,6 +72,8 @@ public class EnemyAI : MonoBehaviour
 
         Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized * pathDirectionFactor;
 
+        Debug.Log($"Direction value:{direction}");
+
         Vector2 force = direction * speed * Time.deltaTime * 50f;
 
         rb.AddForce(force);
@@ -88,19 +89,26 @@ public class EnemyAI : MonoBehaviour
     {
         if (playerNearby)
         {
+            LeanTween.cancel(gameObject);
+
             if (seeker.IsDone())
             {
                 seeker.StartPath(rb.position, player.position, OnPathComplete);
-            }
 
-            LeanTween.delayedCall(0.5f, () => 
-            {
-                gameObject.GetComponent<Enemy>().Shoot();
-            });
+                LeanTween.delayedCall(0.5f, () =>
+                {
+                    gameObject.GetComponent<Enemy>().Shoot();
+                });
+            }
         }
         else
         {
-            LeanTween.move(gameObject, spawnPos, Vector2.Distance(gameObject.transform.position, spawnPos) * 3f);
+            //LeanTween.move(gameObject, spawnPos, Vector2.Distance(gameObject.transform.position, spawnPos) * 3f);
+
+            if (seeker.IsDone())
+            {
+                seeker.StartPath(rb.position, spawnPos, OnPathComplete);
+            }
         }
     }
 

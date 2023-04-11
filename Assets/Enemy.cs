@@ -43,6 +43,7 @@ public class Enemy : MonoBehaviour, IPoolableObject
             enemyShooter.player = FindObjectOfType<BotController>().gameObject;
         }
         enemyAI.enabled = true;
+        enemyAI.spawnPos = transform.position;
         
         currentHealth = maxHealth;
         healthBarFill.GetComponent<Image>().fillAmount = 1;

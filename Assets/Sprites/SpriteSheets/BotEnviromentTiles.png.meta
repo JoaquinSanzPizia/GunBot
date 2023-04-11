@@ -672,6 +672,237 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: BotEnviromentTiles_24
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 224
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85b1069f1a344434f98c19527abb49a7
+      internalID: 1568710645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BotEnviromentTiles_25
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 224
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52eb5be56f1d2ce44bd3dbd91e40ce62
+      internalID: 799697778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BotEnviromentTiles_26
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 224
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45392c9159325554abf6d2b0db65b600
+      internalID: 1486270790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BotEnviromentTiles_27
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 224
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24d647d73e441054f9acca80682f34fe
+      internalID: -2103350604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BotEnviromentTiles_28
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 224
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0d5e6c2a79167f4898ff97557cd8309
+      internalID: 1571041568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BotEnviromentTiles_29
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 224
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 540e5d0194f3dec4b943ae03a7012a4c
+      internalID: -1106404755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BotEnviromentTiles_30
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 224
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d39e1eb2ac2bd94d96e89e5d5b5c568
+      internalID: 1585626654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BotEnviromentTiles_31
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 224
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9597061ed28dae44b70346a9c373411
+      internalID: -535834129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BotEnviromentTiles_32
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 208
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d54dd0bd0f13d54383130166f2ef54a
+      internalID: 1541114428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BotEnviromentTiles_33
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 208
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 537d2c38e82bbdb4886876150dd9ac0e
+      internalID: -446875857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BotEnviromentTiles_34
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 208
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b3d37d4f133aed44a807ec3b60591d2
+      internalID: 1674018992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -683,30 +914,41 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      BotEnviromentTiles_5: -1967891678
-      BotEnviromentTiles_3: -1316363077
-      BotEnviromentTiles_19: -509712025
-      BotEnviromentTiles_21: -1476463614
-      BotEnviromentTiles_17: 1848831324
-      BotEnviromentTiles_20: 1164870466
-      BotEnviromentTiles_2: -333810149
-      BotEnviromentTiles_10: -1718985028
-      BotEnviromentTiles_8: 1415823169
-      BotEnviromentTiles_22: -1177555791
-      BotEnviromentTiles_23: 1662750841
+      BotEnviromentTiles_0: -1688671742
       BotEnviromentTiles_1: -53907260
-      BotEnviromentTiles_6: 1015009807
-      BotEnviromentTiles_7: -1808109203
+      BotEnviromentTiles_10: -1718985028
       BotEnviromentTiles_11: 472934766
       BotEnviromentTiles_12: -1437067898
-      BotEnviromentTiles_0: -1688671742
       BotEnviromentTiles_13: 1531017195
       BotEnviromentTiles_14: -18242367
       BotEnviromentTiles_15: 1688583087
-      BotEnviromentTiles_9: -139212589
       BotEnviromentTiles_16: -1655834443
-      BotEnviromentTiles_4: 1973758257
+      BotEnviromentTiles_17: 1848831324
       BotEnviromentTiles_18: -223589057
+      BotEnviromentTiles_19: -509712025
+      BotEnviromentTiles_2: -333810149
+      BotEnviromentTiles_20: 1164870466
+      BotEnviromentTiles_21: -1476463614
+      BotEnviromentTiles_22: -1177555791
+      BotEnviromentTiles_23: 1662750841
+      BotEnviromentTiles_24: 1568710645
+      BotEnviromentTiles_25: 799697778
+      BotEnviromentTiles_26: 1486270790
+      BotEnviromentTiles_27: -2103350604
+      BotEnviromentTiles_28: 1571041568
+      BotEnviromentTiles_29: -1106404755
+      BotEnviromentTiles_3: -1316363077
+      BotEnviromentTiles_30: 1585626654
+      BotEnviromentTiles_31: -535834129
+      BotEnviromentTiles_32: 1541114428
+      BotEnviromentTiles_33: -446875857
+      BotEnviromentTiles_34: 1674018992
+      BotEnviromentTiles_4: 1973758257
+      BotEnviromentTiles_5: -1967891678
+      BotEnviromentTiles_6: 1015009807
+      BotEnviromentTiles_7: -1808109203
+      BotEnviromentTiles_8: 1415823169
+      BotEnviromentTiles_9: -139212589
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

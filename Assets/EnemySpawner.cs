@@ -4,31 +4,42 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
+    [SerializeField] enum EnemyType { bot01, bot02}
+    [SerializeField] EnemyType enemyType;
     public ObjectPooler pooler;
-    public int enemieAmount;
+    public int[] enemyAmount;
+    [SerializeField] int maxEnemyAmount;
     void Start()
     {
+        enemyAmount[0] = 0;
+        enemyAmount[1] = 0;
+
+        TrySpawnEnemie(EnemyType.bot01);
+        TrySpawnEnemie(EnemyType.bot02);
     }
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Z))
         {
-            SpawnEnemie();
+            TrySpawnEnemie(EnemyType.bot01);
+        }
+
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            TrySpawnEnemie(EnemyType.bot02);
         }
     }
 
-    void SpawnEnemie()
+    void TrySpawnEnemie(EnemyType enemy)
     {
-        int randomEnemy = Random.Range(0, 2);
-
-        switch (randomEnemy)
+        switch (enemy)
         {
-            case 0:
+            case EnemyType.bot01:
                 pooler.SpawnFromPool("enemy01", transform.position + new Vector3(Random.Range(-0.5f, 0.5f), Random.Range(-0.5f, 0.5f), 0f), transform.rotation);
                 break;
 
-            case 1:
+            case EnemyType.bot02:
                 pooler.SpawnFromPool("enemy02", transform.position + new Vector3(Random.Range(-0.5f, 0.5f), Random.Range(-0.5f, 0.5f), 0f), transform.rotation);
                 break;
         }

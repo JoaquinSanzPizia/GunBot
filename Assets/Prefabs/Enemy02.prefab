@@ -416,11 +416,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3168104862355260124, guid: 15933674472483c48b554e6d3429d393, type: 3}
       propertyPath: pathDirectionFactor
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3168104862355260124, guid: 15933674472483c48b554e6d3429d393, type: 3}
       propertyPath: nextWaypointDistance
-      value: 3
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6607695192644519283, guid: 15933674472483c48b554e6d3429d393, type: 3}
       propertyPath: m_SizeDelta.x
@@ -429,6 +429,10 @@ PrefabInstance:
     - target: {fileID: 6607695192644519283, guid: 15933674472483c48b554e6d3429d393, type: 3}
       propertyPath: m_SizeDelta.y
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6916443676677701709, guid: 15933674472483c48b554e6d3429d393, type: 3}
+      propertyPath: m_Radius
+      value: 0.08
       objectReference: {fileID: 0}
     - target: {fileID: 6916443676677701710, guid: 15933674472483c48b554e6d3429d393, type: 3}
       propertyPath: enemyType
