@@ -48,7 +48,7 @@ public class EnemyAI : MonoBehaviour
 
         Move();
 
-        if (Vector2.Distance(transform.position, spawnPos) < 0.01f)
+        if (Vector2.Distance(transform.position, spawnPos) <= 0.1f)
         {
             anim.SetBool("walking", false);
         }
@@ -72,11 +72,11 @@ public class EnemyAI : MonoBehaviour
 
         Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized * pathDirectionFactor;
 
-        Debug.Log($"Direction value:{direction}");
+        Vector2 force = direction * speed * Time.deltaTime * 5f;
 
-        Vector2 force = direction * speed * Time.deltaTime * 50f;
+        //rb.AddForce(force);
 
-        rb.AddForce(force);
+        rb.velocity = force;
 
         float distance = Vector2.Distance(rb.position, path.vectorPath[currentWaypoint]);
 
@@ -89,26 +89,28 @@ public class EnemyAI : MonoBehaviour
     {
         if (playerNearby)
         {
-            LeanTween.cancel(gameObject);
-
             if (seeker.IsDone())
             {
                 seeker.StartPath(rb.position, player.position, OnPathComplete);
 
-                LeanTween.delayedCall(0.5f, () =>
+                if (gameObject.GetComponent<Enemy>().enemyType == Enemy.EnemyType.ranged)
                 {
-                    gameObject.GetComponent<Enemy>().Shoot();
-                });
+                    LeanTween.delayedCall(0.5f, () =>
+                    {
+                        gameObject.GetComponent<Enemy>().Shoot();
+                    });
+                }
             }
         }
         else
         {
-            //LeanTween.move(gameObject, spawnPos, Vector2.Distance(gameObject.transform.position, spawnPos) * 3f);
-
             if (seeker.IsDone())
             {
+                if (Vector2.Distance(transform.position, spawnPos) > 0.1f)
                 seeker.StartPath(rb.position, spawnPos, OnPathComplete);
             }
+
+            //LeanTween.move(gameObject, spawnPos, Vector2.Distance(gameObject.transform.position, spawnPos) * 3f);
         }
     }
 

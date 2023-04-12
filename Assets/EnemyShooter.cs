@@ -13,6 +13,7 @@ public class EnemyShooter : MonoBehaviour
 
     public void Shoot()
     {
+        Debug.Log("Shoot");
         shootMuzzle.Play();
         GameObject bullet = pooler.SpawnFromPool("Bullet01", shootPoint.transform.position, shootPoint.transform.rotation);
         Bullet bulletCs = bullet.GetComponent<Bullet>();

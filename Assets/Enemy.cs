@@ -7,8 +7,8 @@ using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour, IPoolableObject
 {
-    [SerializeField] enum EnemyType { melee, ranged};
-    [SerializeField] EnemyType enemyType;
+    public enum EnemyType { melee, ranged};
+    public EnemyType enemyType;
     [SerializeField] Animator anim;
     [SerializeField] SpriteRenderer model;
     [SerializeField] CircleCollider2D col;

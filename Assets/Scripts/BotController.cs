@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BotController : MonoBehaviour
 {
@@ -15,6 +16,28 @@ public class BotController : MonoBehaviour
 
     public Vector2 lookDir;
 
+    [SerializeField] int maxHealth;
+    [SerializeField] int currentHealth;
+
+    [SerializeField] int maxBattery;
+    [SerializeField] int currentBattery;
+
+    [SerializeField] Image healthBarFill;
+
+    Material matInstance;
+    SpriteRenderer model;
+
+    private void Start()
+    {
+        model = gameObject.GetComponentInChildren<SpriteRenderer>();
+        currentHealth = maxHealth;
+        currentBattery = maxBattery;
+        matInstance = new Material(model.sharedMaterial);
+    }
+    void OnDestroy()
+    {
+        Destroy(matInstance);
+    }
     void FixedUpdate()
     {
         Move();
@@ -75,5 +98,32 @@ public class BotController : MonoBehaviour
 
         handsAnim.SetFloat("mouseX", lookDir.x);
         handsAnim.SetFloat("mouseY", lookDir.y);
+    }
+
+    void TakeDamage(int damage)
+    {
+        LeanTween.cancel(gameObject);
+        LeanTween.scale(gameObject, Vector3.one, 0f);
+
+        matInstance.SetColor("_InsideTint", Color.white);
+        model.sharedMaterial = matInstance;
+
+        LeanTween.delayedCall(0.1f, () =>
+        {
+            matInstance.SetColor("_InsideTint", Color.clear);
+            model.sharedMaterial = matInstance;
+        });
+
+        currentHealth--;
+        healthBarFill.GetComponent<Image>().fillAmount = (1f / maxHealth) * currentHealth;
+        LeanTween.scale(gameObject, gameObject.transform.localScale * 1.1f, 0.1f).setLoopPingPong(1);
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "Enemy" || other.gameObject.tag == "EnemyBullet")
+        {
+            TakeDamage(1);
+        }
     }
 }

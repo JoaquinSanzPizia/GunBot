@@ -404,7 +404,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3168104862355260124, guid: 15933674472483c48b554e6d3429d393, type: 3}
       propertyPath: speed
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3168104862355260124, guid: 15933674472483c48b554e6d3429d393, type: 3}
       propertyPath: moveDelay
