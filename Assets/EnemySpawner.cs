@@ -4,18 +4,19 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    [SerializeField] enum EnemyType { bot01, bot02}
+    [SerializeField] enum EnemyType { bot01, bot02, botTurret01 }
     [SerializeField] EnemyType enemyType;
     public ObjectPooler pooler;
     public int[] enemyAmount;
     [SerializeField] int maxEnemyAmount;
     void Start()
     {
-        enemyAmount[0] = 0;
-        enemyAmount[1] = 0;
+        //enemyAmount[0] = 0;
+        //enemyAmount[1] = 0;
 
         TrySpawnEnemie(EnemyType.bot01);
         TrySpawnEnemie(EnemyType.bot02);
+        TrySpawnEnemie(EnemyType.botTurret01);
     }
 
     void Update()
@@ -29,6 +30,11 @@ public class EnemySpawner : MonoBehaviour
         {
             TrySpawnEnemie(EnemyType.bot02);
         }
+
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            TrySpawnEnemie(EnemyType.botTurret01);
+        }
     }
 
     void TrySpawnEnemie(EnemyType enemy)
@@ -36,11 +42,15 @@ public class EnemySpawner : MonoBehaviour
         switch (enemy)
         {
             case EnemyType.bot01:
-                pooler.SpawnFromPool("enemy01", transform.position + new Vector3(Random.Range(-0.5f, 0.5f), Random.Range(-0.5f, 0.5f), 0f), transform.rotation);
+                pooler.SpawnFromPool("bot01", transform.position + new Vector3(Random.Range(-0.5f, 0.5f), Random.Range(-0.5f, 0.5f), 0f), transform.rotation);
                 break;
 
             case EnemyType.bot02:
-                pooler.SpawnFromPool("enemy02", transform.position + new Vector3(Random.Range(-0.5f, 0.5f), Random.Range(-0.5f, 0.5f), 0f), transform.rotation);
+                pooler.SpawnFromPool("bot02", transform.position + new Vector3(Random.Range(-0.5f, 0.5f), Random.Range(-0.5f, 0.5f), 0f), transform.rotation);
+                break;
+
+            case EnemyType.botTurret01:
+                pooler.SpawnFromPool("botTurret01", transform.position + new Vector3(Random.Range(-0.5f, 0.5f), Random.Range(-0.5f, 0.5f), 0f), transform.rotation);
                 break;
         }
     }

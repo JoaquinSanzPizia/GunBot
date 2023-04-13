@@ -19,7 +19,10 @@ public class EnemyAI : MonoBehaviour
     Seeker seeker;
     Rigidbody2D rb;
 
-    bool playerNearby;
+    public bool playerNearby;
+    [SerializeField] bool isStatic;
+    [SerializeField] bool walks;
+
 
     void OnEnable()
     {
@@ -48,18 +51,23 @@ public class EnemyAI : MonoBehaviour
 
         Move();
 
-        if (Vector2.Distance(transform.position, spawnPos) <= 0.1f)
+        if (!isStatic && walks)
         {
-            anim.SetBool("walking", false);
-        }
-        else
-        {
-            anim.SetBool("walking", true);
+            if (Vector2.Distance(transform.position, spawnPos) <= 0.1f)
+            {
+                anim.SetBool("walking", false);
+            }
+            else
+            {
+                anim.SetBool("walking", true);
+            }
         }
     }
 
     void Move()
     {
+        if (isStatic) return;
+
         if (path == null)
         {
             return;
@@ -87,19 +95,13 @@ public class EnemyAI : MonoBehaviour
     }
     private void UpdatePath()
     {
+        if (isStatic) return;
+
         if (playerNearby)
         {
             if (seeker.IsDone())
             {
                 seeker.StartPath(rb.position, player.position, OnPathComplete);
-
-                if (gameObject.GetComponent<Enemy>().enemyType == Enemy.EnemyType.ranged)
-                {
-                    LeanTween.delayedCall(0.5f, () =>
-                    {
-                        gameObject.GetComponent<Enemy>().Shoot();
-                    });
-                }
             }
         }
         else

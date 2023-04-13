@@ -10,10 +10,26 @@ public class EnemyShooter : MonoBehaviour
     [SerializeField] ObjectPooler pooler;
     [SerializeField] float bulletSpeed;
     [SerializeField] float shootRange;
+    [SerializeField] float attackSpeed;
 
+    public GameObject canon;
+    [SerializeField] float lookingAngle;
+    [SerializeField] bool isCanon;
+
+    bool canShoot;
+    private void OnEnable()
+    {
+        player = FindObjectOfType<BotController>().gameObject;
+        canShoot = true;
+    }
+    private void FixedUpdate()
+    {
+        ShootCR();
+    }
     public void Shoot()
     {
-        Debug.Log("Shoot");
+        canShoot = false;
+        Debug.Log("Shoot");;
         shootMuzzle.Play();
         GameObject bullet = pooler.SpawnFromPool("Bullet01", shootPoint.transform.position, shootPoint.transform.rotation);
         Bullet bulletCs = bullet.GetComponent<Bullet>();
@@ -24,5 +40,25 @@ public class EnemyShooter : MonoBehaviour
         {
             bulletCs.DisableBullet();
         }).uniqueId;
+
+        LeanTween.delayedCall((1f / attackSpeed), () => 
+        {
+            canShoot = true;
+        });
+    }
+
+    void ShootCR()
+    {
+        if (gameObject.GetComponentInParent<EnemyAI>().playerNearby)
+        {
+            if (canShoot) Shoot();
+
+            if (isCanon)
+            {
+                Vector3 aimDirection = (player.transform.position - transform.position).normalized;
+                lookingAngle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg;
+                canon.transform.eulerAngles = new Vector3(0f, 0f, lookingAngle);
+            }
+        }
     }
 }

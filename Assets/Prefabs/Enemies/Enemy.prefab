@@ -230,6 +230,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 954b92ffab1251a4fafe8575ef588e42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyType: 0
   anim: {fileID: 6916443677503696965}
   model: {fileID: 6916443677503696964}
   col: {fileID: 6916443676677701709}
@@ -239,6 +240,7 @@ MonoBehaviour:
   healthBarFill: {fileID: 8579678398668339676}
   healthBar: {fileID: 1885731151183954337}
   enemyAI: {fileID: 3168104862355260124}
+  enemyShooter: {fileID: 0}
 --- !u!114 &3168104862355260124
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -252,7 +254,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  speed: 5
+  speed: 7
   detectRange: 1.5
   destinationRange: 0.2
   nextWaypointDistance: 2
@@ -260,6 +262,10 @@ MonoBehaviour:
   anim: {fileID: 6916443677503696965}
   pathDirectionFactor: 1
   moveDelay: 0.5
+  spawnPos: {x: 0, y: 0}
+  playerNearby: 0
+  isStatic: 0
+  walks: 1
 --- !u!58 &6916443676677701709
 CircleCollider2D:
   m_ObjectHideFlags: 0

@@ -39,9 +39,11 @@ public class Enemy : MonoBehaviour, IPoolableObject
     {
         if (enemyType == EnemyType.ranged)
         {
-            enemyShooter.enabled = false;
+            enemyShooter.enabled = true;
             enemyShooter.player = FindObjectOfType<BotController>().gameObject;
+            if (enemyShooter.canon) enemyShooter.canon.GetComponent<SpriteRenderer>().enabled = true;
         }
+
         enemyAI.enabled = true;
         enemyAI.spawnPos = transform.position;
         
@@ -52,7 +54,7 @@ public class Enemy : MonoBehaviour, IPoolableObject
         originalPos = transform;
         model.enabled = true;
         col.enabled = true;
-        anim.enabled = true;
+        if (anim) anim.enabled = true;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -68,6 +70,8 @@ public class Enemy : MonoBehaviour, IPoolableObject
         if (enemyType == EnemyType.ranged)
         {
             enemyShooter.Shoot();
+
+            if (anim) anim.SetTrigger("shoot");
         }
     }
 
@@ -101,13 +105,15 @@ public class Enemy : MonoBehaviour, IPoolableObject
         {
             enemyShooter.player = null;
             enemyShooter.enabled = false;
+            if (enemyShooter.canon) enemyShooter.canon.GetComponent<SpriteRenderer>().enabled = false;
         }
+
         healthBar.SetActive(false);
         enemyAI.enabled = false;
         deathPS.Play();
         model.enabled = false;
         col.enabled = false;
-        anim.enabled = false;
+        if (anim) anim.enabled = false;
 
         LeanTween.delayedCall(0.5f, () => 
         {

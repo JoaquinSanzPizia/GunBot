@@ -153,8 +153,9 @@ MonoBehaviour:
   - {fileID: 132652252, guid: 4d62f5b572582ae4e8c43a86724b71d4, type: 3}
   shootPoint: {fileID: 4075875693906039741}
   pooler: {fileID: 3706985239084785386}
-  range: 0
-  bulletSpeed: 0
+  range: 3
+  bulletSpeed: 1.5
+  attackSpeed: 2
 --- !u!1001 &4537084705510295783
 PrefabInstance:
   m_ObjectHideFlags: 0

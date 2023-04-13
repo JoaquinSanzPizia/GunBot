@@ -51,6 +51,10 @@ MonoBehaviour:
   pooler: {fileID: 3986326913668121404}
   bulletSpeed: 2
   shootRange: 2
+  attackSpeed: 0.66
+  canon: {fileID: 0}
+  lookingAngle: 0
+  isCanon: 0
 --- !u!1 &4374111257098997355
 GameObject:
   m_ObjectHideFlags: 0
@@ -412,7 +416,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3168104862355260124, guid: 15933674472483c48b554e6d3429d393, type: 3}
       propertyPath: detectRange
-      value: 2.5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3168104862355260124, guid: 15933674472483c48b554e6d3429d393, type: 3}
       propertyPath: pathDirectionFactor
