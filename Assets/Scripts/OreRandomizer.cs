@@ -5,6 +5,7 @@ using Pathfinding;
 
 public class OreRandomizer : MonoBehaviour
 {
+    [SerializeField] SpriteRenderer editorIndicator;
     [SerializeField] GameObject[] cubes;
     [SerializeField] Sprite[] topTextures;
     [SerializeField] Sprite[] bottomTextures;
@@ -14,6 +15,7 @@ public class OreRandomizer : MonoBehaviour
 
     void Start()
     {
+        editorIndicator.enabled = false;
         path = FindObjectOfType<AstarPath>();
         GenerateOre();
     }

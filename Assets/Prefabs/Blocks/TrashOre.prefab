@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 71081450791249880, guid: bfce8718cbea187408ee4c6e85eb617a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 249270050, guid: 834e48b0737a83f4489ec4b5b8ca87cf, type: 3}
     - target: {fileID: 417632687205175148, guid: bfce8718cbea187408ee4c6e85eb617a, type: 3}
       propertyPath: m_Center.y
       value: 0.1
@@ -125,15 +129,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6044769317968443191, guid: bfce8718cbea187408ee4c6e85eb617a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.136321
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6044769317968443191, guid: bfce8718cbea187408ee4c6e85eb617a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.1085865
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6044769317968443191, guid: bfce8718cbea187408ee4c6e85eb617a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 8.137888
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6044769317968443191, guid: bfce8718cbea187408ee4c6e85eb617a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -181,7 +185,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6044769318555577267, guid: bfce8718cbea187408ee4c6e85eb617a, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6044769318569916848, guid: bfce8718cbea187408ee4c6e85eb617a, type: 3}
       propertyPath: m_IsActive
@@ -253,7 +257,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8424035597420001686, guid: bfce8718cbea187408ee4c6e85eb617a, type: 3}
       propertyPath: m_InstanceId
-      value: -26406
+      value: -122158
       objectReference: {fileID: 0}
     - target: {fileID: 8955681612992416649, guid: bfce8718cbea187408ee4c6e85eb617a, type: 3}
       propertyPath: m_InstanceId
