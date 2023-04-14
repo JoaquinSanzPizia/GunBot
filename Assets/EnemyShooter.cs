@@ -11,6 +11,7 @@ public class EnemyShooter : MonoBehaviour
     [SerializeField] float bulletSpeed;
     [SerializeField] float shootRange;
     [SerializeField] float attackSpeed;
+    [SerializeField] int damage;
 
     public GameObject canon;
     [SerializeField] float lookingAngle;
@@ -33,6 +34,7 @@ public class EnemyShooter : MonoBehaviour
         shootMuzzle.Play();
         GameObject bullet = pooler.SpawnFromPool("Bullet01", shootPoint.transform.position, shootPoint.transform.rotation);
         Bullet bulletCs = bullet.GetComponent<Bullet>();
+        bulletCs.damage = damage;
 
         Vector3 direction = (player.transform.position - gameObject.transform.position).normalized;
 

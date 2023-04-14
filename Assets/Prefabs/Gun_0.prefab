@@ -156,6 +156,7 @@ MonoBehaviour:
   range: 3
   bulletSpeed: 1.5
   attackSpeed: 2
+  damage: 2
 --- !u!1001 &4537084705510295783
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -61,7 +61,7 @@ public class Enemy : MonoBehaviour, IPoolableObject
     {
         if (other.gameObject.tag == "Bullet")
         {
-            GetHit();
+            GetHit(other.gameObject.GetComponent<Bullet>().damage);
         }
     }
 
@@ -75,7 +75,7 @@ public class Enemy : MonoBehaviour, IPoolableObject
         }
     }
 
-    void GetHit()
+    void GetHit(int damage)
     {
         LeanTween.cancel(gameObject);
         LeanTween.scale(gameObject, Vector3.one, 0f);
@@ -89,7 +89,7 @@ public class Enemy : MonoBehaviour, IPoolableObject
             model.sharedMaterial = matInstance;
         });
 
-        currentHealth--;
+        currentHealth -= damage;
         healthBarFill.GetComponent<Image>().fillAmount = (1f / maxHealth) * currentHealth;
         LeanTween.scale(gameObject, gameObject.transform.localScale * 1.1f, 0.1f).setLoopPingPong(1);
 

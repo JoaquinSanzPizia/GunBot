@@ -114,7 +114,7 @@ public class BotController : MonoBehaviour
             model.sharedMaterial = matInstance;
         });
 
-        currentHealth--;
+        currentHealth -= damage;
         healthBarFill.GetComponent<Image>().fillAmount = (1f / maxHealth) * currentHealth;
         LeanTween.scale(gameObject, gameObject.transform.localScale * 1.1f, 0.1f).setLoopPingPong(1);
     }
@@ -123,7 +123,7 @@ public class BotController : MonoBehaviour
     {
         if (other.gameObject.tag == "Enemy" || other.gameObject.tag == "EnemyBullet")
         {
-            TakeDamage(1);
+            TakeDamage(other.gameObject.GetComponent<Bullet>().damage);
         }
     }
 }

@@ -52,6 +52,7 @@ MonoBehaviour:
   bulletSpeed: 2
   shootRange: 2
   attackSpeed: 0.66
+  damage: 1
   canon: {fileID: 0}
   lookingAngle: 0
   isCanon: 0

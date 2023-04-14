@@ -4,21 +4,43 @@ using UnityEngine;
 
 public class BreakableObject : MonoBehaviour
 {
+    [SerializeField] SpriteRenderer editorIndicator;
+
     [SerializeField] int damageResistance;
     [SerializeField] int maxHp;
     [SerializeField] int currentHp;
+    [SerializeField] GameObject[] models;
     [SerializeField] GameObject[] drops;
 
+    GameObject currentModel;
+
     [SerializeField] ParticleSystem breakFX;
+    PolygonCollider2D col;
 
     void Start()
     {
+        col = gameObject.GetComponent<PolygonCollider2D>();
+        col.enabled = true;
         currentHp = maxHp;
+        currentModel = models[Random.Range(0, models.Length)];
+        currentModel.SetActive(true);
+        editorIndicator.enabled = false;
     }
 
-    void Update()
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        
+        if (other.gameObject.tag == "Bullet")
+        {
+            GetHit();
+        }
+    }
+
+    void Respawn()
+    {
+        col.enabled = true;
+        currentHp = maxHp;
+        currentModel = models[Random.Range(0, models.Length)];
+        currentModel.SetActive(true);
     }
 
     void GetHit()
@@ -38,5 +60,7 @@ public class BreakableObject : MonoBehaviour
     void Break()
     {
         breakFX.Play();
+        currentModel.SetActive(false);
+        col.enabled = false;
     }
 }

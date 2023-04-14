@@ -10,6 +10,7 @@ public class Bullet : MonoBehaviour, IPoolableObject
     public Transform originalParent;
     public GameObject visual;
     public int tweenID;
+    public int damage;
 
     [SerializeField] CircleCollider2D col;
 

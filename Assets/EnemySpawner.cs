@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
+    [SerializeField] SpriteRenderer editorIndicator;
     [SerializeField] enum EnemyType { bot01, bot02, botTurret01 }
     [SerializeField] EnemyType enemyType;
     public ObjectPooler pooler;
@@ -11,6 +12,7 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] int maxEnemyAmount;
     void Start()
     {
+        editorIndicator.enabled = false;
         //enemyAmount[0] = 0;
         //enemyAmount[1] = 0;
 

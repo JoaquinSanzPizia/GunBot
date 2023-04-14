@@ -279,7 +279,8 @@ MonoBehaviour:
   pooler: {fileID: 2900847414709967954}
   bulletSpeed: 1.5
   shootRange: 2
-  attackSpeed: 1
+  attackSpeed: 0.5
+  damage: 2
   canon: {fileID: 8904503398134217608}
   lookingAngle: 0
   isCanon: 1
