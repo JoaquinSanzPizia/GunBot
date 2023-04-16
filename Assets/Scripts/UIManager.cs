@@ -14,15 +14,7 @@ public class UIManager : MonoBehaviour
         ShowInventory();
     }
 
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.I) || Input.GetKeyDown(KeyCode.Tab))
-        {
-            ShowInventory();
-        }
-    }
-
-    void ShowInventory()
+    public void ShowInventory()
     {
         if (!inventoryOn)
         {
