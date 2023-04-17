@@ -396,6 +396,7 @@ GameObject:
   - component: {fileID: 464297529054570243}
   - component: {fileID: 1355153171493834417}
   - component: {fileID: 62687971039565843}
+  - component: {fileID: 5197746122718880583}
   m_Layer: 0
   m_Name: AluminimRock
   m_TagString: Untagged
@@ -517,14 +518,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   editorIndicator: {fileID: 1355153171493834417}
   damageResistance: 0
-  maxHp: 10
+  maxHp: 5
   currentHp: 0
   models:
   - {fileID: 4845190211899724242}
   - {fileID: 4845190211646726222}
   - {fileID: 4845190213327737883}
-  drops: []
+  itemDropper: {fileID: 5197746122718880583}
+  dropsItem: 1
   breakFX: {fileID: 5108526379266943822}
+--- !u!114 &5197746122718880583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4845190213329006880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d303d156aff127549a0328192dc17160, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemSpawner: {fileID: 0}
+  itemsToDrop:
+  - itemSO: {fileID: 11400000, guid: 0f8f7dc89d934504698fed30c6b2c238, type: 2}
+    dropChance: 100
+  maxAmountToDrop: 3
 --- !u!1 &7548294828624640996
 GameObject:
   m_ObjectHideFlags: 0

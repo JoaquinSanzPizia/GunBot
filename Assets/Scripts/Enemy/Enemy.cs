@@ -25,6 +25,8 @@ public class Enemy : MonoBehaviour, IPoolableObject
     [SerializeField] EnemyAI enemyAI;
     [SerializeField] EnemyShooter enemyShooter;
 
+    [SerializeField] ItemDropper itemDropper;
+
     void Start()
     {
         matInstance = new Material(model.sharedMaterial);
@@ -119,5 +121,7 @@ public class Enemy : MonoBehaviour, IPoolableObject
         {
             LeanTween.move(gameObject, Vector2.zero, 0f);
         });
+
+        itemDropper.DropItem();
     }
 }

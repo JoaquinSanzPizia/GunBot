@@ -380,6 +380,7 @@ GameObject:
   - component: {fileID: 5225432093940677237}
   - component: {fileID: 5225432093940677236}
   - component: {fileID: 4363720559226452198}
+  - component: {fileID: 3938315367458517259}
   - component: {fileID: 5225432093940677239}
   - component: {fileID: 6417674066917912194}
   - component: {fileID: 2870392615150541870}
@@ -431,6 +432,7 @@ MonoBehaviour:
   healthBar: {fileID: 960151077819792283}
   enemyAI: {fileID: 4363720559226452198}
   enemyShooter: {fileID: 2774868680090150950}
+  itemDropper: {fileID: 3938315367458517259}
 --- !u!114 &4363720559226452198
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -456,6 +458,25 @@ MonoBehaviour:
   playerNearby: 0
   isStatic: 1
   walks: 0
+--- !u!114 &3938315367458517259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5225432093940677194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d303d156aff127549a0328192dc17160, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemSpawner: {fileID: 0}
+  itemsToDrop:
+  - itemSO: {fileID: 11400000, guid: a51bc7c34b2589742ae0d06dfcf83342, type: 2}
+    dropChance: 70
+  - itemSO: {fileID: 11400000, guid: a5eb223720fb90a41b7dff4a10783ff2, type: 2}
+    dropChance: 30
+  maxAmountToDrop: 3
 --- !u!58 &5225432093940677239
 CircleCollider2D:
   m_ObjectHideFlags: 0

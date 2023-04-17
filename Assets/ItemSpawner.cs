@@ -6,24 +6,11 @@ using Inventory.Model;
 public class ItemSpawner : MonoBehaviour
 {
     public ObjectPooler pooler;
-    public ItemSO[] itemsArray;
-    [SerializeField] int maxEnemyAmount;
-    void Start()
+    public void SpawnItem(ItemSO itemSO, int quantity, Vector3 spawnPos)
     {
-
-    }
-
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.M))
-        {
-            //SpawnItem(item);
-        }
-    }
-
-    void SpawnItem(int itemIndex)
-    {
-        pooler.SpawnFromPool("bot01", transform.position + new Vector3(Random.Range(-0.5f, 0.5f), Random.Range(-0.5f, 0.5f), 0f), transform.rotation);
+        GameObject item = pooler.SpawnFromPool("item", spawnPos, Quaternion.identity);
+        item.GetComponent<Item>().InventoryItem = itemSO;
+        item.GetComponent<Item>().Spawn();
+        item.GetComponent<Item>().Quantity = quantity;
     }
 }
-

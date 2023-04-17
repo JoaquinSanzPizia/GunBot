@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Inventory.Model;
 
 public class BreakableObject : MonoBehaviour
 {
@@ -10,12 +11,11 @@ public class BreakableObject : MonoBehaviour
     [SerializeField] int maxHp;
     [SerializeField] int currentHp;
     [SerializeField] GameObject[] models;
-    [SerializeField] GameObject[] drops;
 
-    bool dropsItem;
+    public ItemDropper itemDropper;
+    public bool dropsItem;
 
     GameObject currentModel;
-
     [SerializeField] ParticleSystem breakFX;
     PolygonCollider2D col;
 
@@ -67,7 +67,7 @@ public class BreakableObject : MonoBehaviour
 
         if (dropsItem)
         {
-            Debug.Log("DropItem");
+            itemDropper.DropItem();
         }
     }
 }

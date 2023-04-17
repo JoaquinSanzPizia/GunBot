@@ -14770,6 +14770,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2257647561928202025}
   - component: {fileID: -1180191279591953512}
+  - component: {fileID: 9032900248071947155}
   - component: {fileID: 7461453295843012134}
   - component: {fileID: 6083381341426728955}
   m_Layer: 0
@@ -14812,14 +14813,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   editorIndicator: {fileID: 7461453295843012134}
   damageResistance: 0
-  maxHp: 10
+  maxHp: 5
   currentHp: 0
   models:
   - {fileID: 2257647560558049237}
   - {fileID: 2257647560238450249}
   - {fileID: 2257647561931502108}
-  drops: []
+  itemDropper: {fileID: 9032900248071947155}
+  dropsItem: 1
   breakFX: {fileID: 193387755652497773}
+--- !u!114 &9032900248071947155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2257647561928202023}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d303d156aff127549a0328192dc17160, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemSpawner: {fileID: 0}
+  itemsToDrop:
+  - itemSO: {fileID: 11400000, guid: fe5b849a01146b64b815ef3aa2f29a28, type: 2}
+    dropChance: 80
+  - itemSO: {fileID: 11400000, guid: 1f5b771159a9c854c8e9fa4a89795ff6, type: 2}
+    dropChance: 20
+  maxAmountToDrop: 3
 --- !u!212 &7461453295843012134
 SpriteRenderer:
   m_ObjectHideFlags: 0

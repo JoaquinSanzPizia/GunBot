@@ -191,6 +191,7 @@ GameObject:
   - component: {fileID: 6916443676677701710}
   - component: {fileID: 3168104862355260124}
   - component: {fileID: 6916443676677701709}
+  - component: {fileID: 1951300666159566447}
   - component: {fileID: 5649900573151827128}
   - component: {fileID: 3507737641584862740}
   m_Layer: 9
@@ -241,6 +242,7 @@ MonoBehaviour:
   healthBar: {fileID: 1885731151183954337}
   enemyAI: {fileID: 3168104862355260124}
   enemyShooter: {fileID: 0}
+  itemDropper: {fileID: 1951300666159566447}
 --- !u!114 &3168104862355260124
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -282,6 +284,25 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0.04}
   serializedVersion: 2
   m_Radius: 0.1
+--- !u!114 &1951300666159566447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6916443676677701744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d303d156aff127549a0328192dc17160, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemSpawner: {fileID: 0}
+  itemsToDrop:
+  - itemSO: {fileID: 11400000, guid: a51bc7c34b2589742ae0d06dfcf83342, type: 2}
+    dropChance: 70
+  - itemSO: {fileID: 11400000, guid: a5eb223720fb90a41b7dff4a10783ff2, type: 2}
+    dropChance: 30
+  maxAmountToDrop: 3
 --- !u!50 &5649900573151827128
 Rigidbody2D:
   serializedVersion: 4

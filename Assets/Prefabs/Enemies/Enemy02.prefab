@@ -407,6 +407,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 1951300666159566447, guid: 15933674472483c48b554e6d3429d393, type: 3}
+      propertyPath: itemsToDrop.Array.data[1].itemSO
+      value: 
+      objectReference: {fileID: 11400000, guid: fa1f4ebf5b8008143a0f26a9b861240a, type: 2}
     - target: {fileID: 3168104862355260124, guid: 15933674472483c48b554e6d3429d393, type: 3}
       propertyPath: speed
       value: 10
