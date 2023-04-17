@@ -10,11 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fa77370e2c2115c468c0724d66aba62b, type: 3}
-  m_Name: CopperPlank
+  m_Name: BotChipV1
   m_EditorClassIdentifier: 
-  <IsStackable>k__BackingField: 1
-  <MaxStackSize>k__BackingField: 99
-  <Name>k__BackingField: Copper Plank
-  <Description>k__BackingField: Ah, the trusty copper plank, the duct tape of the
-    construction world
-  <ItemImage>k__BackingField: {fileID: 1533307686, guid: e70a128e8b77f494b8766651ec145a34, type: 3}
+  <IsStackable>k__BackingField: 0
+  <MaxStackSize>k__BackingField: 1
+  <Name>k__BackingField: BotChip_V1
+  <Description>k__BackingField: Obtained from destroing a V1 Bot
+  <ItemImage>k__BackingField: {fileID: -666661003, guid: 2110f7dc5ad606d45b10d0281f54206d, type: 3}

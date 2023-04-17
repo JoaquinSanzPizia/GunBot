@@ -12,6 +12,8 @@ public class BreakableObject : MonoBehaviour
     [SerializeField] GameObject[] models;
     [SerializeField] GameObject[] drops;
 
+    bool dropsItem;
+
     GameObject currentModel;
 
     [SerializeField] ParticleSystem breakFX;
@@ -62,5 +64,10 @@ public class BreakableObject : MonoBehaviour
         breakFX.Play();
         currentModel.SetActive(false);
         col.enabled = false;
+
+        if (dropsItem)
+        {
+            Debug.Log("DropItem");
+        }
     }
 }

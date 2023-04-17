@@ -5,7 +5,7 @@ using UnityEngine;
 public class UIManager : MonoBehaviour
 {
     [SerializeField] GameObject inventoryParent;
-    [SerializeField] GameObject mainInventory, hotBar, componentsIventory, armorInventory;
+    [SerializeField] GameObject mainInventory, hotBar, componentsIventory, armorInventory, descriptionUI;
     bool inventoryOn;
 
     void Start()
@@ -37,5 +37,18 @@ public class UIManager : MonoBehaviour
             inventoryOn = false;
             return;
         }
+    }
+
+    public void ShowDescription()
+    {
+        LeanTween.moveLocalX(descriptionUI, -75.5f, 0.15f).setEaseInOutQuint().setOnComplete(() =>
+        {
+            LeanTween.moveLocalX(descriptionUI, -141.5f, 0.3f).setEaseOutBack();
+        });
+    }
+
+    public void HideDescription()
+    {
+        LeanTween.moveLocalX(descriptionUI, -75.5f, 0.3f).setEaseInOutQuint();
     }
 }

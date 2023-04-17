@@ -14,6 +14,7 @@ namespace Inventory.UI
         private TextMeshProUGUI title;
         [SerializeField]
         private TextMeshProUGUI description;
+        [SerializeField] UIManager uIManager;
 
 
         public void Awake()
@@ -23,6 +24,7 @@ namespace Inventory.UI
 
         public void ResetDescription()
         {
+            uIManager.HideDescription();
             itemImage.gameObject.SetActive(false);
             title.text = "";
             description.text = "";
@@ -30,6 +32,7 @@ namespace Inventory.UI
 
         public void SetDescription(Sprite sprite, string itemName, string itemDescription)
         {
+            uIManager.ShowDescription();
             itemImage.gameObject.SetActive(true);
             itemImage.sprite = sprite;
             title.text = itemName;

@@ -62,6 +62,8 @@ namespace Inventory.UI
         public void OnEndDrag()
         {
             OnItemEndDrag?.Invoke(this);
+            itemImage.enabled = true;
+            amountText.enabled = true;
         }
 
         public void OnBeginDrag()
@@ -69,6 +71,8 @@ namespace Inventory.UI
             if (empty)
                 return;
             OnItemBeginDrag?.Invoke(this);
+            itemImage.enabled = false;
+            amountText.enabled = false;
         }
 
         public void OnDrop()
