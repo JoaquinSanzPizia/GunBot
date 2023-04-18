@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa77370e2c2115c468c0724d66aba62b, type: 3}
   m_Name: BotScrap
   m_EditorClassIdentifier: 
-  <IsStackable>k__BackingField: 1
-  <MaxStackSize>k__BackingField: 99
+  <IsStackable>k__BackingField: 0
+  <MaxStackSize>k__BackingField: 1
   <Name>k__BackingField: Bot Scrap
   <Description>k__BackingField: Obtained from destroing a V1 Bot
   <ItemImage>k__BackingField: {fileID: 1233573568, guid: 2110f7dc5ad606d45b10d0281f54206d, type: 3}

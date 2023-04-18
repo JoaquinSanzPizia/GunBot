@@ -163,8 +163,8 @@ GameObject:
   - component: {fileID: 8261667195615965508}
   - component: {fileID: 2641985739497340704}
   - component: {fileID: 628782800768370466}
-  - component: {fileID: 1493308674662766753}
-  - component: {fileID: 4717142799489026229}
+  - component: {fileID: 8305735983571146719}
+  - component: {fileID: 642961872765339657}
   m_Layer: 5
   m_Name: Inventory Slot
   m_TagString: Untagged
@@ -231,7 +231,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &1493308674662766753
+--- !u!114 &8305735983571146719
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -243,11 +243,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6d1b56ce17523340a52cd24014d8819, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemType: 0
   itemImage: {fileID: 1177569380}
   amountText: {fileID: 5507453132745499531}
   borderImage: {fileID: 8268883696679597366}
+  isSpecialSlot: 0
   empty: 1
---- !u!114 &4717142799489026229
+--- !u!114 &642961872765339657
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -264,7 +266,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1493308674662766753}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: InventoryItem, Assembly-CSharp
           m_MethodName: OnPointerClick
           m_Mode: 0
@@ -280,7 +282,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1493308674662766753}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: InventoryItem, Assembly-CSharp
           m_MethodName: OnDrop
           m_Mode: 1
@@ -296,7 +298,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1493308674662766753}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: InventoryItem, Assembly-CSharp
           m_MethodName: OnBeginDrag
           m_Mode: 1
@@ -312,7 +314,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1493308674662766753}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: InventoryItem, Assembly-CSharp
           m_MethodName: OnEndDrag
           m_Mode: 1
@@ -333,6 +335,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3261751979593699114}
+  - component: {fileID: 1398888313523966252}
   m_Layer: 5
   m_Name: InventoryItem
   m_TagString: Untagged
@@ -361,8 +364,16 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &1398888313523966252
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5331366715474349644}
+  m_CullTransparentMesh: 1
 --- !u!1 &7588654324484638912
 GameObject:
   m_ObjectHideFlags: 0

@@ -10,12 +10,15 @@ namespace Inventory.UI
 {
     public class UiInventoryItem : MonoBehaviour
     {
+        [SerializeField] public enum ItemType { none, speedCard, core, trinket, storage, battery, light, helmet, armor, boots}
+        [SerializeField] public ItemType itemType;
         [SerializeField] Image itemImage;
         [SerializeField] TextMeshProUGUI amountText;
         [SerializeField] Image borderImage;
 
         public event Action<UiInventoryItem> OnItemClicked, OnItemDroppedOn, OnItemBeginDrag, OnItemEndDrag, OnRightMouseButtonClick;
 
+        public bool isSpecialSlot;
         public bool empty = true;
         public void Awake()
         {

@@ -8,7 +8,7 @@ namespace Inventory.UI
     public class InventoryUI : MonoBehaviour
     {
         [SerializeField] UiInventoryItem itemPrefab;
-        [SerializeField] RectTransform contentPanel;
+        [SerializeField] RectTransform contentPanel, hotbarPanel, armorPanel, componentsPanel;
         [SerializeField] InventoryDescription inventoryDescription;
         [SerializeField] MouseFollower mouseFollower;
 
@@ -24,7 +24,62 @@ namespace Inventory.UI
 
         public void InitializeInventory(int inventorySize)
         {
-            for (int i = 0; i < inventorySize; i++)
+            for (int i = 0; i < 20; i++)
+            {
+                UiInventoryItem item = Instantiate(itemPrefab, Vector3.zero, Quaternion.identity);
+                item.transform.SetParent(contentPanel);
+                itemList.Add(item);
+                item.OnItemClicked += HandleItemSelection;
+                item.OnItemBeginDrag += HandleBeginDrag;
+                item.OnItemDroppedOn += HandleSwap;
+                item.OnItemEndDrag += HandleEndDrag;
+                item.OnRightMouseButtonClick += HandleShowItemActions;
+            }
+
+            for (int i = 0; i < 10; i++)
+            {
+                UiInventoryItem item = Instantiate(itemPrefab, Vector3.zero, Quaternion.identity);
+                item.transform.SetParent(hotbarPanel);
+                itemList.Add(item);
+                item.OnItemClicked += HandleItemSelection;
+                item.OnItemBeginDrag += HandleBeginDrag;
+                item.OnItemDroppedOn += HandleSwap;
+                item.OnItemEndDrag += HandleEndDrag;
+                item.OnRightMouseButtonClick += HandleShowItemActions;
+            }
+
+            for (int i = 0; i < 6; i++)
+            {
+                UiInventoryItem item = Instantiate(itemPrefab, Vector3.zero, Quaternion.identity);
+                item.transform.SetParent(componentsPanel);
+                itemList.Add(item);
+                item.OnItemClicked += HandleItemSelection;
+                item.OnItemBeginDrag += HandleBeginDrag;
+                item.OnItemDroppedOn += HandleSwap;
+                item.OnItemEndDrag += HandleEndDrag;
+                item.OnRightMouseButtonClick += HandleShowItemActions;
+
+                item.itemType = (UiInventoryItem.ItemType)i+1;
+            }
+
+            for (int i = 0; i < 3; i++)
+            {
+                UiInventoryItem item = Instantiate(itemPrefab, Vector3.zero, Quaternion.identity);
+                item.transform.SetParent(armorPanel);
+                itemList.Add(item);
+                item.OnItemClicked += HandleItemSelection;
+                item.OnItemBeginDrag += HandleBeginDrag;
+                item.OnItemDroppedOn += HandleSwap;
+                item.OnItemEndDrag += HandleEndDrag;
+                item.OnRightMouseButtonClick += HandleShowItemActions;
+
+                item.itemType = (UiInventoryItem.ItemType)i + 7;
+            }
+        }
+
+        public void UpdateInventorySize()
+        {
+            for (int i = 0; i < 5; i++)
             {
                 UiInventoryItem item = Instantiate(itemPrefab, Vector3.zero, Quaternion.identity);
                 item.transform.SetParent(contentPanel);
@@ -36,6 +91,7 @@ namespace Inventory.UI
                 item.OnRightMouseButtonClick += HandleShowItemActions;
             }
         }
+
 
         private void Update()
         {

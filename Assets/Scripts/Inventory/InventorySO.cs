@@ -13,7 +13,7 @@ namespace Inventory.Model
         private List<InventoryItem> inventoryItems;
 
         [field: SerializeField]
-        public int Size { get; private set; } = 40;
+        public int Size { get; private set; } = 59;
 
         public event Action<Dictionary<int, InventoryItem>> OnInventoryUpdated;
 
@@ -163,6 +163,9 @@ namespace Inventory.Model
     [Serializable]
     public struct InventoryItem
     {
+        [SerializeField] public enum ItemType { none, speedCard, core, trinket, storage, battery, light, helmet, armor, boots }
+        [SerializeField] public ItemType itemType;
+
         public int quantity;
         public ItemSO item;
         //public List<ItemParameter> itemState;
