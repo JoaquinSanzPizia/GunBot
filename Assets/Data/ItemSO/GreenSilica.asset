@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa77370e2c2115c468c0724d66aba62b, type: 3}
   m_Name: GreenSilica
   m_EditorClassIdentifier: 
-  <IsStackable>k__BackingField: 0
-  <MaxStackSize>k__BackingField: 1
+  <IsStackable>k__BackingField: 1
+  <MaxStackSize>k__BackingField: 99
   <Name>k__BackingField: Green Silica
   <Description>k__BackingField: 'Green silica
 
